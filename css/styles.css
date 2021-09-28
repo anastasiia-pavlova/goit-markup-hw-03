@@ -3,12 +3,16 @@
   --complementary-text-color: #757575;
   --accent-text-color: #ffffff;
   --complementary-accent-color: #2196f3;
+  --primary-button-color: #2196f3;
   --footer-mail-tel-color: rgba(255, 255, 255, 0.6);
   --main-background-color: #ffffff;
   --studio-text-color: #000000;
   --second-background-color: #2f303a;
   --button-background-color: #188ce8;
+  --filter-button-color: #f5f4fa;
   --team-background-color: #f5f4fa;
+  --portfolio-border-color: #eeeeee;
+  --header-border-color: #ececec;
 }
 /* Общие стили для двух страниц */
 
@@ -45,37 +49,67 @@ img {
   max-width: 100%;
 }
 
-.header-page {
-  border-bottom: 1px solid #ececec;
-}
-
 .container {
   margin-right: auto;
   margin-left: auto;
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
 }
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
+/* Шапка */
+
+.header-page {
+  border-bottom: 1px solid var(--header-border-color);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
 /* Логотип */
+
 .logo {
   color: var(--complementary-accent-color);
+
   font-family: Raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
 }
+
 .logo-accent {
   color: var(--studio-text-color);
 }
 
 /* Навигация */
+
+.navigation {
+  display: flex;
+  margin-left: 93px;
+}
+
+.navigation-item + .navigation-item {
+  margin-left: 50px;
+}
+
 .navigation .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--main-text-color);
   font-weight: 500;
   line-height: 1.14;
@@ -92,6 +126,16 @@ img {
 }
 
 /* Контакты в шапке */
+
+.contact {
+  display: flex;
+  margin-left: auto;
+}
+
+.contact-item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .contact .link {
   color: var(--complementary-text-color);
   font-weight: 500;
@@ -149,7 +193,7 @@ img {
   padding: 200px 452px;
   background-color: var(--second-background-color);
   text-align: center;
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
 }
 
 .hero-title {
@@ -164,12 +208,13 @@ img {
 }
 
 .button.primary {
-  /* display: inline-block; */
   padding: 10px 32px;
   border-radius: 4px;
   border: none;
+  min-width: 200px;
+
   color: var(--accent-text-color);
-  background-color: var(--complementary-accent-color);
+  background-color: var(--primary-button-color);
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
@@ -187,7 +232,19 @@ img {
 
 /* Особенности */
 
-.features-item {
+.features-list {
+  display: flex;
+}
+
+.features-list > .item + .item {
+  margin-left: 30px;
+}
+
+.features-list .item {
+  width: 270px;
+}
+
+.features-name {
   margin-bottom: 10px;
   font-weight: 700;
   line-height: 1.14;
@@ -204,6 +261,14 @@ img {
   padding-top: 0;
 }
 
+.task-list {
+  display: flex;
+}
+
+.task-list > .item + .item {
+  margin-left: 30px;
+}
+
 .task-title {
   margin-bottom: 50px;
   font-weight: 700;
@@ -218,6 +283,24 @@ img {
   background-color: var(--team-background-color);
 }
 
+.team-list {
+  display: flex;
+}
+
+.team-list > .item + .item {
+  margin-left: 30px;
+}
+
+.team-list > .item {
+  background-color: var(--main-background-color);
+  text-align: center;
+  width: 270px;
+}
+
+.team-photo {
+  margin-bottom: 30px;
+}
+
 .team-title {
   margin-bottom: 50px;
 
@@ -227,24 +310,18 @@ img {
   text-align: center;
 }
 
-.team-photo {
-  margin-bottom: 30px;
-}
-
 .team-member {
   margin-bottom: 10px;
 
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
 }
 
 .team-position {
   color: var(--complementary-text-color);
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;
 }
 
 /* Страница портфолио */
@@ -254,7 +331,13 @@ img {
 /* Фильтр */
 
 .filter-list {
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
+}
+
+.filter-list > .item + .item {
+  margin-left: 8px;
 }
 
 .button.filter {
@@ -264,7 +347,7 @@ img {
   border: none;
 
   color: var(--main-text-color);
-  background-color: #f5f4fa;
+  background-color: var(--filter-button-color);
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -294,10 +377,9 @@ img {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-top: 30px;
-}
 
-.portfolio-item * {
-  outline: 1px solid tomato;
+  border: 1px solid var(--portfolio-border-color);
+  background-color: var(--main-background-color);
 }
 
 .portfolio-description {
