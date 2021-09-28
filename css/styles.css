@@ -40,6 +40,11 @@ p {
   padding: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .header-page {
   border-bottom: 1px solid #ececec;
 }
@@ -51,6 +56,10 @@ p {
   padding-left: 15px;
   padding-right: 15px;
   outline: 1px solid tomato;
+}
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 /* Логотип */
@@ -178,12 +187,6 @@ p {
 
 /* Особенности */
 
-.features {
-  padding-top: 94px;
-  padding-bottom: 94px;
-  background-color: turquoise;
-}
-
 .features-item {
   margin-bottom: 10px;
   font-weight: 700;
@@ -197,9 +200,8 @@ p {
 
 /* Чем мы занимаемся */
 
-.task {
-  padding-bottom: 94px;
-  background-color: violet;
+.section.no-top-padding {
+  padding-top: 0;
 }
 
 .task-title {
@@ -213,9 +215,6 @@ p {
 /* Наша команда */
 
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
-
   background-color: var(--team-background-color);
 }
 
@@ -252,13 +251,11 @@ p {
 
 /* Наши работы */
 
-.portfolio {
-  padding-top: 94px;
-  padding-bottom: 94px;
-  background-color: yellow;
-}
-
 /* Фильтр */
+
+.filter-list {
+  margin-bottom: 50px;
+}
 
 .button.filter {
   display: inline-block;
@@ -286,11 +283,28 @@ p {
 
 /* Портфолио */
 
-.portfolio-photo {
-  margin-bottom: 20px;
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+  margin-left: -30px;
 }
 
 .portfolio-item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.portfolio-item * {
+  outline: 1px solid tomato;
+}
+
+.portfolio-description {
+  padding: 20px 24px;
+}
+
+.portfolio-name {
   margin-bottom: 4px;
 
   color: var(--main-text-color);
